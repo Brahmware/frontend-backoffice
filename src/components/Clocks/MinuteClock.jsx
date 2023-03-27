@@ -16,7 +16,7 @@ function Clock() {
         };
     }, []);
     return (
-        <FlexEC gap={'0.25em'} pb={'0.5em'}>
+        <FlexEC gap={'0.25em'} pb={'2.25em'}>
             <Typography
                 fontSize={'1.5em'}
                 lineHeight='1em'

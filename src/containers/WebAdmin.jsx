@@ -52,7 +52,7 @@ const WebAdmin = () => {
 
 		<ThickPaddedCard
 			elevation={5}
-			sx={{ padding: '4em 2em', opacity: 0.98 }}
+			sx={{ padding: '2em', opacity: 0.98 }}
 		>
 			<ColumnFlexCC
 				gap='1.5em'
