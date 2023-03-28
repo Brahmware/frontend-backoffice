@@ -1,7 +1,12 @@
 import { Card } from '@mui/material'
 import React from 'react'
 import { colors, transition } from '../../brahmwareTheme/theme'
+import addAlpha from '../../utils/addAlpha'
+import radialGradientGenerator from '../../utils/radialGradientGenerator'
 import FlexCC from '../placements/FlexCC'
+import Earth from './Earth'
+import Moon from './Moon'
+import Sun from './Sun'
 
 const PlanetSystem = ({ trigger, children }) => {
     return (
@@ -22,77 +27,26 @@ const PlanetSystem = ({ trigger, children }) => {
 
                             '&.earth': {
                                 transform: 'translate(8em, 8em) scale(1.5)',
+                                '& .atmosphere': {
+                                    opacity: '10%',
+                                    transform: 'scale(1.125)'
+                                }
                             },
 
                             '&.moon': {
                                 transform: 'translate(-30em, 2em) scale(1.25)',
+
+                                '& .moon_darkness': {
+                                    transform: 'rotate(-6deg) translateX(15%)'
+                                }
                             },
                         }
                     }
                 }
             >
-                <Card
-                    elevation={15}
-                    className='art earth'
-                    sx={{
-                        position: 'absolute',
-                        zIndex: 3,
-                        background: colors.primary__dark,
-                        height: '30em',
-                        width: '30em',
-                        borderRadius: '50%',
-                        transform: 'translate(8em, 8em)',
-                        transition: transition(),
-                    }}
-                />
-                <Card
-                    elevation={5}
-                    className='art moon'
-                    sx={{
-                        position: 'absolute',
-                        zIndex: 2,
-                        background: colors.text__color__dark,
-                        height: '10em',
-                        width: '10em',
-                        borderRadius: '50%',
-                        transform: 'translate(-25em, -5em)',
-                        transition: transition(),
-                    }}
-                />
-                <FlexCC
-                    className='art sun'
-                    zIndex={1}
-                    sx={{
-                        position: 'absolute',
-                        zIndex: 1,
-                        transform: 'translate(28em, -3em) scale(0.75)',
-                        transition: transition(),
-                    }}
-                >
-                    <Card
-                        elevation={4}
-                        sx={{
-                            position: 'absolute',
-                            zIndex: 2,
-                            background: colors.warning,
-                            opacity: '10%',
-                            height: '20em',
-                            width: '20em',
-                            borderRadius: '50%',
-                        }}
-                    />
-                    <Card
-                        elevation={0}
-                        sx={{
-                            position: 'absolute',
-                            zIndex: 1,
-                            background: colors.warning,
-                            height: '16em',
-                            width: '16em',
-                            borderRadius: '50%',
-                        }}
-                    />
-                </FlexCC>
+                <Earth initTransform='translate(8em, 8em)'/>
+                <Moon initTransform='translate(-25em, -5em)'/>
+                <Sun initTransform='translate(28em, -3em) scale(0.75)' />
             </FlexCC>
             <FlexCC zIndex={1}>
                 {children}

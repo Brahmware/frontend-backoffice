@@ -48,7 +48,11 @@ const ThemedField = styled(TextField)(({ buttonBackground }) => (
             "-webkit-box-shadow": `0 0 0 100px ${colors.field__bg} inset !important`,
             "-webkit-text-fill-color": `${colors.text__color} !important`,
             "caret-color": `${colors.primary} !important`,
-        }
+        },
+
+        /* '& .MuiInputBase-root': {
+            paddingRight: 0
+        } */
 
     }));
 

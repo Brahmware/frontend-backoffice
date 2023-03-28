@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { colors } from '../brahmwareTheme/theme';
 import PlanetSystem from '../components/art/PlanetSystem';
-import ThickPaddedCard from '../components/cards/ThickPaddedCard';
+import ArtisticBrahmCard from '../components/cards/ArtisticBrahmCard';
 import ColumnFlexCC from '../components/placements/ColumnFlexCC';
 import FlexCC from '../components/placements/FlexCC';
 import SEO from '../components/seo';
 import FormHeader from '../containers/FormHeader';
-import NotWebAdmin from '../containers/NotWebAdmin';
-import WebAdmin from '../containers/WebAdmin';
+import LoginFormFields from '../containers/LoginFormFields.jsx';
+import LoginNavigationButtons from '../containers/LoginNavigationButtons';
 import addAlpha from '../utils/addAlpha';
 
 const Login = () => {
@@ -17,28 +17,28 @@ const Login = () => {
     return (
         <>
             <SEO title="Backoffice" />
-            <FlexCC sx={{ background: colors.darker__card }}>
+            <FlexCC sx={{ background: colors.black }}>
                 <PlanetSystem trigger={isHover}>
-                    <ThickPaddedCard
+                    <ArtisticBrahmCard
                         elevation={1}
                         onMouseEnter={() => setIsHover(true)}
                         onMouseLeave={() => setIsHover(false)}
                         sx={{
                             padding: '2em',
-                            backgroundColor: addAlpha(colors.black, 0.2),
-                            backdropFilter: 'grayscale(1) blur(10px)'
+                            backgroundColor: addAlpha(colors.black, /* 0.2 */ 0.9),
+                            /* backdropFilter: 'grayscale(1) blur(10px)' */
                         }}
                     >
                         <ColumnFlexCC>
+                            <LoginNavigationButtons />
                             <FormHeader />
-                            <WebAdmin />
-                            <NotWebAdmin />
+                            <LoginFormFields />
                         </ColumnFlexCC>
-                    </ThickPaddedCard>
+                    </ArtisticBrahmCard>
                 </PlanetSystem>
             </FlexCC>
         </>
     )
 }
 
-export default Login
+export default Login;
