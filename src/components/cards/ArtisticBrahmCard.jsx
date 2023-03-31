@@ -1,4 +1,5 @@
 import { Card, styled } from "@mui/material";
+import { colors } from "../../brahmwareTheme/theme";
 import ThickPaddedCard from "./ThickPaddedCard";
 
 const ArtisticBrahmCard = styled(ThickPaddedCard)({

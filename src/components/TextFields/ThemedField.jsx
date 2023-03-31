@@ -38,17 +38,21 @@ const ThemedField = styled(TextField)(({ buttonBackground }) => (
         '& input': {
             border: 0,
             borderRadius: 0,
-            "caret-color": `${colors.primary} !important`,
+            caretColor: `${colors.primary} !important`,
             color: `${colors.text__color} !important`,
         },
-        
-        "& :-webkit-autofill": {
-            backgroundColor: `${colors.transperent}`,
-            borderRadius: '0',
-            "-webkit-box-shadow": `0 0 0 100px ${colors.field__bg} inset !important`,
-            "-webkit-text-fill-color": `${colors.text__color} !important`,
-            "caret-color": `${colors.primary} !important`,
-        },
+
+        '&:has(:-webkit-autofill)': {
+            '& label': {
+                transform: 'translate(0.85em, 0.3em) scale(0.75)',
+
+                '&::after': {
+                    content: '" (Autocompleted)"',
+                    color: colors.text__color__dark,
+                    fontWeight: 'light'
+                }
+            }
+        }
 
         /* '& .MuiInputBase-root': {
             paddingRight: 0

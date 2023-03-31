@@ -4,7 +4,7 @@ import {
     selectCurrentRoles,
     selectCurrentToken,
     selectCurrentUser
-} from '../../App/auth/authSlice';
+} from '../../Application/auth/authSlice';
 
 const RequireAuth = ({ allowedRoles }) => {
 

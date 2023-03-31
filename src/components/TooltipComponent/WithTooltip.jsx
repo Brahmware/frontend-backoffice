@@ -1,5 +1,5 @@
 import { Typography } from "@mui/material";
-import React from "react";
+import { useState, Fragment } from "react";
 import { TooltipComponent } from "./TooltipComponent";
 
 const WithToolTip = ({
@@ -17,7 +17,7 @@ const WithToolTip = ({
     ...others
 }) => {
 
-    const [show, setShow] = React.useState(false);
+    const [show, setShow] = useState(false);
 
     const onMouseEnterBehaviour = () => {
         setShow(true);
@@ -27,7 +27,7 @@ const WithToolTip = ({
     }
 
     return (
-        <React.Fragment key={index}>
+        <Fragment key={index}>
             {
                 message ?
                     <TooltipComponent
@@ -55,7 +55,7 @@ const WithToolTip = ({
                     :
                     children
             }
-        </React.Fragment>
+        </Fragment>
     )
 
 };

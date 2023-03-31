@@ -22,6 +22,9 @@
     }
 }
 
+input {
+    all: unset;
+}
 
 /*-- Google Font --*/
 
@@ -518,4 +521,12 @@ img {
     /* Internet Explorer/Edge */
     user-select: none;
     /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+/* Forms Autofill */
+*:has(:-webkit-autofill) {
+    & :-webkit-autofill {
+        -webkit-background-clip: text;
+        -webkit-box-shadow: unset !important;
+    }
 }

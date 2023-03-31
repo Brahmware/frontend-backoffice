@@ -6,7 +6,7 @@ const FlexCC = styled(Box)({
     width: '100%',
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
 });
 
 export default FlexCC;

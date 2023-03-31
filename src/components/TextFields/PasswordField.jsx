@@ -1,7 +1,13 @@
-import React from 'react'
-import ThemedField from './ThemedField'
+import React from 'react';
 import { IconButton } from '@mui/material';
-import { Visibility, VisibilityOff } from '@mui/icons-material';
+import {
+    Visibility as VisibilityOnIcon,
+    VisibilityOff as VisibilityOff
+} from '@mui/icons-material';
+import TextFieldWithAction from './TextFieldWithAction';
+import WithToolTip from '../TooltipComponent/WithTooltip';
+import { colors } from '../../brahmwareTheme/theme';
+import ElevatedFilledIconButton from '../Buttons/ElevatedFilledIconButton';
 
 const PasswordField = (props) => {
 
@@ -14,26 +20,26 @@ const PasswordField = (props) => {
     };
 
     return (
-        <ThemedField
-                {...props}
-                id={props.id}
-                label={props.label}
-                fullWidth={props.fullWidth}
-                type={showPassword ? 'text' : 'password'}
-                size={props.size}
-                InputProps={{
-                    endAdornment: (
-                        <IconButton
-                            aria-label="toggle password visibility"
-                            onClick={handleClickShowPassword}
-                            onMouseDown={handleMouseDownPassword}
-                            edge="end"
-                        >
-                            {showPassword ? <VisibilityOff /> : <Visibility />}
-                        </IconButton>
-                    )
-                }}
-            />
+        <TextFieldWithAction {...props} type={showPassword ? 'text' : 'password'}>
+            <WithToolTip
+                message={showPassword ? 'Hide Password' : 'Show Password'}
+                color={colors.primary}
+                textColor={colors.darker__card}
+                tooltipPlacement={'right'}
+                showChangeState
+            >
+                <ElevatedFilledIconButton
+                    component='button'
+                    variant='outlined'
+                    color='primary'
+                    size='medium'
+                    elevation={1}
+                    onClick={handleClickShowPassword}
+                >
+                    {showPassword ? <VisibilityOff /> : <VisibilityOnIcon />}
+                </ElevatedFilledIconButton>
+            </WithToolTip>
+        </TextFieldWithAction>
     )
 }
 

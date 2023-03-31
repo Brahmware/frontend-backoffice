@@ -47,6 +47,7 @@ const ActionArea = () => {
                     elevation={6}
                     href='https://mailpoint.brahmware.com'
                     rel='noreferrer'
+                    target='_blank'
                 >
                     Mailpoint
                 </ElevatedFilledThemedButton>

@@ -1,5 +1,5 @@
 import { apiSlice } from "../api/apiSlice";
-import { setError } from "../errors/errorSlice";
+import responseProcessor from "../helper/responseProcessor";
 import { logOut, setCredentials } from "./authSlice";
 
 export const authApiSlice = apiSlice.injectEndpoints({
@@ -10,17 +10,12 @@ export const authApiSlice = apiSlice.injectEndpoints({
                 method: 'POST',
                 body: { ...credentials }
             }),
-            async onQueryStarted(args, { dispatch, queryFulfilled }) {
-                try {
-                    const { data } = await queryFulfilled;
-                    dispatch(setCredentials({ ...data }));
-                } catch (error) {
-                    dispatch(setError({
-                        error: error?.error,
-                        property: null,
-                        message: error?.error?.data?.message
-                    }))
-                }
+            async onQueryStarted(_args, { dispatch, queryFulfilled }) {
+                await responseProcessor({
+                    dispatch: dispatch,
+                    queryFulfilled: queryFulfilled,
+                    targetFunction: setCredentials
+                })
             }
         }),
         sendLogout: builder.mutation({

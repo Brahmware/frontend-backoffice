@@ -2,7 +2,7 @@ import React,
 {
     Suspense as LazyLoadProvider
 } from 'react';
-import { store } from './App/store';
+import { store } from './Application/store';
 import { theme } from './brahmwareTheme/theme';
 import ReactDOM from 'react-dom/client';
 import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles';
