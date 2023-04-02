@@ -1,58 +1,66 @@
 import React from 'react'
 import { colors } from '../../../brahmwareTheme/theme'
-import ElevatedFilledThemedButton from '../../../components/Buttons/ElevatedFilledThemedButton'
 import WithToolTip from '../../../components/TooltipComponent/WithTooltip'
-import FlexCS from '../../../components/placements/FlexCS';
 import {
-    ArrowBack as BackButtonIcon,
     AlternateEmail as WebMailIcon,
-    Hub as SystemsIcon
+    WorkOutline as SystemsIcon
 } from '@mui/icons-material';
 import { Divider } from '@mui/material';
+import ElevatedFilledIconButton from '../../../components/Buttons/ElevatedFilledIconButton';
+import FlexSC from '../../../components/placements/FlexSC';
 
 const ActionArea = () => {
     return (
-        <FlexCS gap='0.5em'>
-            <WithToolTip
-                message={'Go to Systems'}
-                color={colors.primary}
-                textColor={colors.darker__card}
-                tooltipPlacement={'left'}
-            >
-                <ElevatedFilledThemedButton
-                    component='a'
-                    size='small'
-                    varient='contained'
-                    endIcon={<SystemsIcon />}
-                    elevation={7}
-                    href='https://systems.brahmware.com'
-                    target='_blank'
-                    rel="noreferrer"
-                >
-                    Systems
-                </ElevatedFilledThemedButton>
-            </WithToolTip>
-            <Divider flexItem orientation='vertical' light/>
+        <FlexSC gap='0.5em'>
+
             <WithToolTip
                 message={'Go to Mailpoint'}
                 color={colors.primary}
                 textColor={colors.darker__card}
                 tooltipPlacement='right'
             >
-                <ElevatedFilledThemedButton
+                <ElevatedFilledIconButton
                     component='a'
                     size='small'
                     varient='contained'
-                    endIcon={<WebMailIcon />}
-                    elevation={6}
+                    color='primary'
+                    elevation={7}
                     href='https://mailpoint.brahmware.com'
                     rel='noreferrer'
                     target='_blank'
                 >
-                    Mailpoint
-                </ElevatedFilledThemedButton>
+                    <WebMailIcon fontSize='0.9em' />
+                </ElevatedFilledIconButton>
             </WithToolTip>
-        </FlexCS>
+
+            <Divider
+                color={colors.darker__card}
+                flexItem
+                orientation='vertical'
+                dark
+            />
+
+            <WithToolTip
+                message={'Go to Systems'}
+                color={colors.primary}
+                textColor={colors.darker__card}
+                tooltipPlacement={'left'}
+            >
+                <ElevatedFilledIconButton
+                    component='a'
+                    size='small'
+                    varient='contained'
+                    color='primary'
+                    elevation={7}
+                    href='https://systems.brahmware.com'
+                    target='_blank'
+                    rel="noreferrer"
+                >
+                    <SystemsIcon fontSize='0.9em' />
+                </ElevatedFilledIconButton>
+            </WithToolTip>
+
+        </FlexSC>
     )
 }
 

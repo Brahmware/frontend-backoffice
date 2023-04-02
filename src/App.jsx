@@ -1,8 +1,8 @@
-import "./assets/scss/app.scss";
 import { Navigate, Route, Routes } from 'react-router-dom';
 import RequireAuth from "./features/auth/RequireAuth";
 import { rolesList } from "./utils/rolesList";
 import { lazy } from "react";
+import "./assets/scss/app.scss";
 
 const Login = lazy(() => import("./pages/Login"));
 
@@ -20,8 +20,9 @@ const App = () => {
 					/>
 				}
 			>
-				
+
 			</Route>
+			<Route path='/' element={<div style={{ background: 'red' }}>Dashboard</div>} />
 			<Route path="/login" element={<Login />}></Route>
 			<Route path="*" element={<Navigate to="/" replace />} />
 		</Routes>

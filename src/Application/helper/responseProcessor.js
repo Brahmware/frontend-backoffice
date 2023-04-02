@@ -17,9 +17,8 @@ const responseProcessor = async ({ dispatch, targetFunction, queryFulfilled }) =
 
         return dispatch(targetFunction({ ...response.data }));
 
-    } catch (error) {
-
-        if (error.error.status === FETCH_ERROR) return dispatch(
+    } catch (errorResponse) {
+        if (errorResponse.error.status === FETCH_ERROR) return dispatch(
             setResponseState({
                 success: false,
                 isError: true,
@@ -32,17 +31,21 @@ const responseProcessor = async ({ dispatch, targetFunction, queryFulfilled }) =
             })
         )
 
-        const { status, data: { property, errorMessage, errorType } } = error;
-        if (property === ALT) return dispatch({
-            success: false,
-            message: errorMessage,
-            error: {
-                errorType: errorType,
-                property: ALT,
+        const { status, data: { property, errorMessage, errorType } } = errorResponse?.error;
+
+        if (property === ALT) return dispatch(
+            setResponseState({
+                success: false,
+                isError: true,
                 message: errorMessage,
-                fullError: error,
-            }
-        });
+                error: {
+                    errorType: errorType,
+                    property: ALT,
+                    message: errorMessage,
+                    fullError: errorResponse?.error,
+                }
+            })
+        );
 
         if (getErrorType(status) === 4) return dispatch(
             setResponseState({
@@ -53,7 +56,7 @@ const responseProcessor = async ({ dispatch, targetFunction, queryFulfilled }) =
                     errorType: errorType,
                     property: property,
                     message: errorMessage,
-                    fullError: error,
+                    fullError: errorResponse?.error,
                 }
             })
         );
@@ -67,7 +70,7 @@ const responseProcessor = async ({ dispatch, targetFunction, queryFulfilled }) =
                     errorType: errorType,
                     property: property,
                     message: errorMessage,
-                    fullError: error,
+                    fullError: errorResponse?.error,
                 }
             })
         );

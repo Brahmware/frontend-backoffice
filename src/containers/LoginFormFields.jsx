@@ -40,7 +40,7 @@ import {
 import FlexCC from '../components/placements/FlexCC';
 
 const helperTextObject = {
-	username: {
+	user: {
 		required: "Username is Required",
 		pattern: "Wrong Username or Email"
 	},
@@ -82,7 +82,7 @@ const LoginFormFields = () => {
 
 		const subscription = watch((value) => {
 			value
-				&& value?.username
+				&& value?.user
 				&& value?.password
 				&& dispatch(setResponseState({ ...initialResponseState }));
 		});
@@ -92,6 +92,14 @@ const LoginFormFields = () => {
 	}, [watch]);
 
 	const currentResponseError = useSelector(selectCurrentError);
+
+	const commonErrorGrowCondition = () => {
+		if (currentResponseError?.errorType === FETCH_ERROR) return true;
+		if (currentResponseError?.property === ALT) return true;
+		if (currentResponseError?.errorType === SERVER__ERROR) return true;
+		if (currentResponseError?.errorType) return true;
+		return false;
+	};
 
 	return (
 
@@ -126,7 +134,7 @@ const LoginFormFields = () => {
 										fullWidth={true}
 										variant={'filled'}
 										ref={null}
-										name='username'
+										name='user'
 										id="user"
 										label='User'
 										placeholder='Enter username or registered email'
@@ -188,13 +196,16 @@ const LoginFormFields = () => {
 						sx={{ transform: 'translateY(0.8em)' }}
 					>
 						{
-							currentResponseError?.errorType === FETCH_ERROR ||
-							currentResponseError?.property === ALT ||
-							currentResponseError?.errorType === SERVER__ERROR &&
+							commonErrorGrowCondition() &&
 							<CollapsableError
-								growCondition={currentResponseError?.errorType === FETCH_ERROR}
+								position='relative'
+								growCondition={commonErrorGrowCondition()}
 							>
-								{currentResponseError.message}
+								<FlexCC>
+									<Typography fontWeight='medium' color='error' fontSize='0.9em'>
+										{currentResponseError.message}
+									</Typography>
+								</FlexCC>
 							</CollapsableError>
 						}
 					</FlexCC>
