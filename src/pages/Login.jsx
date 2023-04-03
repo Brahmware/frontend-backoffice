@@ -30,10 +30,16 @@ const Login = () => {
                             padding: '2em',
                             transition: transition(),
                             backgroundColor: currentResponseState.isError ?
-                                addAlpha(colors.danger__form_bg, /* 0.2 */ 0.9) :
-                                addAlpha(colors.black, /* 0.2 */ 0.9)
+                            addAlpha(colors.danger__form_bg, 0.9) :
+                            addAlpha(colors.black, 0.9)
+
+                            /* This will activate the backdrop filter */
+
+                            /* backgroundColor: currentResponseState.isError ?
+                            addAlpha(colors.danger__form_bg, 0.2) :
+                            addAlpha(colors.black, 0.2)
                             ,
-                            /* backdropFilter: 'grayscale(1) blur(10px)' */
+                            backdropFilter: 'grayscale(1) blur(10px)' */
                         }}
                     >
                         <ColumnFlexCC>
