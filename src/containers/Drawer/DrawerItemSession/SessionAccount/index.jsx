@@ -1,4 +1,4 @@
-import ColumnFlexSC from '../../../placements/ColumnFlexSC'
+import ColumnFlexSC from '../../../../components/placements/ColumnFlexSC'
 import SessionLogout from './SessionLogout'
 import SessionUser from './SessionUser'
 

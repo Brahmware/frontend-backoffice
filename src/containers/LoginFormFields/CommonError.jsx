@@ -2,6 +2,7 @@ import { Typography } from '@mui/material';
 import React from 'react'
 import { useSelector } from 'react-redux';
 import { selectCurrentError } from '../../Application/responseState/responseStateSlice';
+import { transition } from '../../brahmwareTheme/theme';
 import FlexCC from '../../components/placements/FlexCC'
 import CollapsableError from '../../components/TextFields/CollapsableError';
 import { ALT, FETCH_ERROR, SERVER__ERROR } from '../../utils/contants';
@@ -23,23 +24,21 @@ const CommonError = () => {
             position='relative'
             mt='-2em'
             sx={{
-                transform: 'translateY(0.8em)'
+                transform: 'translateY(0.8em)',
+                transition: transition(),
+                height: commonErrorGrowCondition() ? '0.5em' : 0
             }}
         >
             {
-                commonErrorGrowCondition() &&
-                <CollapsableError
-                    position='relative'
-                    growCondition={commonErrorGrowCondition()}
+                <Typography
+                    fontWeight='medium'
+                    color='error'
+                    fontSize='0.6em'
                 >
-                    <FlexCC>
-                        <Typography fontWeight='medium' color='error' fontSize='0.9em'>
-                            {currentResponseError.message}
-                        </Typography>
-                    </FlexCC>
-                </CollapsableError>
+                    {currentResponseError.message}
+                </Typography>
             }
-        </FlexCC>
+        </FlexCC >
     )
 }
 

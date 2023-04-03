@@ -1,12 +1,9 @@
-import { Box, Divider } from '@mui/material';
-import { LogoutIcon } from '../../assets/icons';
-import { colors } from '../../brahmwareTheme/theme';
-import DrawerLayout from '../../layout/DrawerLayout';
-import ThemedButton from '../Buttons/ThemedButton';
-import ColumnFlexCC from '../placements/ColumnFlexCC';
-import FlexCC from '../placements/FlexCC';
-import DrawerItemSession from './DrawerItemSession';
-import DrawerItemSwitch from './DrawerItemSwitch';
+import { Box, Divider } from "@mui/material";
+import ColumnFlexCC from "../../components/placements/ColumnFlexCC";
+import DrawerLayout from "../../layout/DrawerLayout";
+import DrawerItemSwitch from "./DrawerItemSwitch";
+import DrawerItemSession from "./DrawerItemSession";
+
 
 const Drawer = () => (
     <DrawerLayout>
@@ -29,7 +26,6 @@ const Drawer = () => (
                 </ColumnFlexCC>
             </ColumnFlexCC>
         </ColumnFlexCC>
-
     </DrawerLayout>
 );
 

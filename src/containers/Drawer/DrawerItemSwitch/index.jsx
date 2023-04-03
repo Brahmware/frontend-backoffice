@@ -1,11 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 import { selectCurrentDrawerState, setDrawerState } from "../../../Application/drawerState/drawerStateSlice";
 import { colors, drawer } from "../../../brahmwareTheme/theme";
-import FlexCC from "../../placements/FlexCC";
-import FlexSC from "../../placements/FlexSC";
-import SwitchToggle from "../../switches/SwitchToggle";
-import WithToolTip from "../../TooltipComponent/WithTooltip";
-
+import FlexCC from "../../../components/placements/FlexCC";
+import FlexSC from "../../../components/placements/FlexSC";
+import SwitchToggle from "../../../components/switches/SwitchToggle";
+import WithToolTip from "../../../components/TooltipComponent/WithTooltip";
 
 const DrawerItemSwitch = () => {
     const currentDrawerState = useSelector(selectCurrentDrawerState);

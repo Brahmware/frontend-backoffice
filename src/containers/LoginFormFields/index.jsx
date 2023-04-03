@@ -27,7 +27,7 @@ const LoginFormFields = () => {
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const [login] = useLoginMutation();
+    const [login, { isLoading }] = useLoginMutation();
     const {
 
         control,
@@ -95,7 +95,7 @@ const LoginFormFields = () => {
 
                         <FlexEC>
                             {/* Submit Button */}
-                            <Submit />
+                            <Submit isLoading={isLoading} />
                         </FlexEC>
                     </FlexEE>
                 </ColumnFlexCC>

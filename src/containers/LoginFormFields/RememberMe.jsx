@@ -5,6 +5,7 @@ import { colors } from '../../brahmwareTheme/theme'
 import StateControlCheckBox from '../../components/CheckBox/StateControlCheckBox'
 import WithToolTip from '../../components/TooltipComponent/WithTooltip'
 import usePersist from '../../hooks/usePersist'
+import displayText from '../../utils/displayText'
 
 const RememberMe = ({ control }) => {
 
@@ -19,11 +20,15 @@ const RememberMe = ({ control }) => {
             render={({ field }) => {
                 return (
                     <WithToolTip
-                        message='Persist your Login'
+                        message={
+                            persist ?
+                                displayText.__PERSISTS_LOGIN :
+                                displayText.__DOES_NOT_PERSISTS_LOGIN
+                        }
                         tooltipVanish={false}
                         tooltipPlacement="left"
-                        color={colors.primary}
-                        textColor={colors.darker__card}
+                        color={persist ? colors.primary : colors.dark__card}
+                        textColor={persist ? colors.darker__card : colors.text__color__dark}
                         showChangeState={true}
                     >
                         <FormControlLabel

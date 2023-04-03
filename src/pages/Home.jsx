@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import Drawer from '../components/Drawer';
+import Drawer from '../containers/Drawer';
 
 import SEO from '../components/seo'
 import BackOfficeLayout from '../layout/BackOfficeLayout';

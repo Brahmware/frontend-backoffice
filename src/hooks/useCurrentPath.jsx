@@ -1,12 +1,12 @@
-import { matchRoutes, useLocation } from "react-router-dom"
+import { matchRoutes, useLocation } from 'react-router-dom';
 
-const routes = [{ path: "/members/:id" }]
+const routes = [{ path: '/:page' }]
 
 const useCurrentPath = () => {
-  const location = useLocation()
-  const [{ route }] = matchRoutes(routes, location)
+  const location = useLocation();
+  const [{ route }] = matchRoutes(routes, location);
 
-  return route.path
+  return route.path;
 };
 
 export default useCurrentPath;

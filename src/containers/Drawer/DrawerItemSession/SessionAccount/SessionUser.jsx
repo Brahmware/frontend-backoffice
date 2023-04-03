@@ -1,7 +1,6 @@
-import { Typography } from '@mui/material';
-import React from 'react'
-import { useSelector } from 'react-redux'
-import { selectCurrentUser } from '../../../../Application/auth/authSlice'
+import { Typography } from "@mui/material";
+import { useSelector } from "react-redux";
+import { selectCurrentUser } from "../../../../Application/auth/authSlice";
 
 const SessionUser = () => {
 

@@ -3,9 +3,7 @@ import { useLoginMutation } from '../../Application/auth/authApiSlice';
 import ThemedLoadingButton from '../../components/Buttons/ThemedLoadingButton'
 import { ArrowForwardRounded as ForwardIcon } from '@mui/icons-material';
 
-const Submit = () => {
-
-    const [_login, { isLoading }] = useLoginMutation();
+const Submit = ({ isLoading }) => {
 
     return (
         <ThemedLoadingButton

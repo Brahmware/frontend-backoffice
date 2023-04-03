@@ -1,6 +1,6 @@
 import { Divider } from '@mui/material';
-import MenuItemBox from '../../Boxes/MenuItemBox';
-import FlexSC from '../../placements/FlexSC';
+import MenuItemBox from '../../../components/Boxes/MenuItemBox';
+import FlexSC from '../../../components/placements/FlexSC';
 import SessionAccount from './SessionAccount';
 import SessionAvatar from './SessionAvatar';
 

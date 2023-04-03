@@ -1,7 +1,8 @@
-import { Avatar } from '@mui/material';
-import LoadingIconButton from '../../Buttons/LoadingIconButton';
-import { colors, transition, scales } from '../../../brahmwareTheme/theme';
-import { Link } from 'react-router-dom';
+import { Avatar } from "@mui/material"
+import { Link } from "react-router-dom"
+import { colors, scales, transition } from "../../../brahmwareTheme/theme"
+import LoadingIconButton from "../../../components/Buttons/LoadingIconButton"
+
 
 const SessionAvatar = () => {
     return (
@@ -16,7 +17,7 @@ const SessionAvatar = () => {
                     outline: `1px solid ${colors.muted}`,
                     transition: transition('fast'),
                 },
-                
+
                 '&:hover': {
                     '& .icon__avatar': {
                         outline: `2px solid ${colors.primary}`,
