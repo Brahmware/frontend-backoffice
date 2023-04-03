@@ -15,7 +15,7 @@ import ThemedLoadingButton from '../components/Buttons/ThemedLoadingButton';
 import { ArrowForwardRounded } from '@mui/icons-material';
 import FlexSC from '../components/placements/FlexSC';
 import StateControlCheckBox from '../components/CheckBox/StateControlCheckBox';
-import { Typography } from '@mui/material';
+import { FormControlLabel, Typography } from '@mui/material';
 import { colors } from '../brahmwareTheme/theme';
 import { BrahmNautIcon } from '../assets/icons';
 import ArtisticBrahmCard from '../components/cards/ArtisticBrahmCard';
@@ -38,6 +38,7 @@ import {
 	initialState as initialResponseState
 } from '../Application/responseState/responseStateSlice';
 import FlexCC from '../components/placements/FlexCC';
+import WithToolTip from '../components/TooltipComponent/WithTooltip';
 
 const helperTextObject = {
 	user: {
@@ -57,7 +58,7 @@ const LoginFormFields = () => {
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
 	const [login, { isLoading }] = useLoginMutation();
-	const [, setPersist] = usePersist();
+	const [persist, setPersist] = usePersist();
 
 	const {
 
@@ -74,9 +75,11 @@ const LoginFormFields = () => {
 
 	const handleFormSubmit = async ({ ...formData }) => {
 		await login(formData);
-		currentResponseState.success &&
-			navigate('/', { replace: false });
 	};
+
+	useEffect(() => {
+		currentResponseState.success && navigate('/', { replace: false });
+	}, [currentResponseState.success])
 
 	useEffect(() => {
 
@@ -210,21 +213,42 @@ const LoginFormFields = () => {
 						}
 					</FlexCC>
 					<FlexEE>
-						<FlexSC gap={'0.5em'}>
-							<StateControlCheckBox
-								message='Persist your Login'
-								color={colors.primary}
-								textColor={colors.darker__card}
-								showChangeState={true}
-								onChange={handleLoginPersistance}
-							/>
-							<Typography
-								lineHeight='1.125em'
-								fontWeight='medium'
-							>
-								Remember Me
-							</Typography>
-						</FlexSC>
+						<Controller
+							control={control}
+							name='persist'
+							defaultValue='true'
+							render={({ field, fieldState: { error } }) => {
+								return (
+									<WithToolTip
+										message='Persist your Login'
+										tooltipVanish={false}
+										tooltipPlacement="left"
+										color={colors.primary}
+										textColor={colors.darker__card}
+										showChangeState={true}
+									>
+										<FormControlLabel
+											control={
+												<StateControlCheckBox
+													{...field}
+													initialValue={persist}
+													onChange={handleLoginPersistance}
+												/>
+											}
+											label={
+												<Typography
+													lineHeight='1.125em'
+													whiteSpace='nowrap'
+												>
+													Remember Me
+												</Typography>
+											}
+											sx={{ gap: '0.25em' }}
+										/>
+									</WithToolTip>
+								)
+							}}
+						/>
 						<FlexEC>
 							<ThemedLoadingButton
 								variant={isLoading ? 'outlined' : 'contained'}

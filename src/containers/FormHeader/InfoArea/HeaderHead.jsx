@@ -8,7 +8,7 @@ const HeaderHead = () => {
             <Typography
                 fontWeight={'thin'}
                 fontSize={'0.75em'}
-                pl='0.125em'
+                pl='0.33em'
             >
                 Welcome to
             </Typography>

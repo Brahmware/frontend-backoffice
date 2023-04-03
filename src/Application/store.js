@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { apiSlice } from "./api/apiSlice";
 import responseStateReducer from "./responseState/responseStateSlice";
+import drawerStateReducer from "./drawerState/drawerStateSlice";
 import authReducer from "./auth/authSlice";
 import errorReducer from "./errors/errorSlice";
 import usersReducer from "./users/usersSlice";
@@ -10,6 +11,7 @@ export const store = configureStore({
     reducer: {
         [apiSlice.reducerPath]: apiSlice.reducer,
         responseState: responseStateReducer,
+        drawerState: drawerStateReducer,
         auth: authReducer,
         error: errorReducer,
         users: usersReducer,

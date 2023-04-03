@@ -5,7 +5,7 @@ import NotificationArea from './NotificationArea';
 
 const FormHeader = () => {
     return (
-        <FlexEE py={'2em'}>
+        <FlexEE pt='2em' pb='1.25em'>
             <InfoArea />
             <NotificationArea />
         </FlexEE>

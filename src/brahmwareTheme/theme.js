@@ -57,7 +57,11 @@ const fonts = {
 
 export const transition = (speed) => `all ${speed === 'fast' ? '200ms' : '600ms'} ease 0s`
 
-export const drawerWidth = 240;
+export const drawer = {
+    drawerClose: '4em',
+    drawerOpenOffset: '10em',
+    fullDrawerWidth: '14em'
+};
 
 export const theme = createTheme({
     palette: {

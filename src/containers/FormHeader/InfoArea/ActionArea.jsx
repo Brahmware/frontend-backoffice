@@ -11,13 +11,13 @@ import FlexSC from '../../../components/placements/FlexSC';
 
 const ActionArea = () => {
     return (
-        <FlexSC gap='0.5em'>
+        <FlexSC gap='0.5em' pl='0.125em'>
 
             <WithToolTip
                 message={'Go to Mailpoint'}
                 color={colors.primary}
                 textColor={colors.darker__card}
-                tooltipPlacement='right'
+                tooltipPlacement='left'
             >
                 <ElevatedFilledIconButton
                     component='a'
@@ -34,17 +34,18 @@ const ActionArea = () => {
             </WithToolTip>
 
             <Divider
-                color={colors.darker__card}
+                color={colors.muted}
                 flexItem
                 orientation='vertical'
                 dark
+                sx={{ height: '0.75em', alignSelf: 'center' }}
             />
 
             <WithToolTip
                 message={'Go to Systems'}
                 color={colors.primary}
                 textColor={colors.darker__card}
-                tooltipPlacement={'left'}
+                tooltipPlacement='right'
             >
                 <ElevatedFilledIconButton
                     component='a'

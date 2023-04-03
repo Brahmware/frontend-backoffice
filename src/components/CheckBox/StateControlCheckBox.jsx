@@ -3,30 +3,20 @@ import React, { useState } from 'react'
 import { colors } from '../../brahmwareTheme/theme';
 import WithToolTip from '../TooltipComponent/WithTooltip';
 
-const StateControlCheckBox = ({ color, onChange, ...fields }) => {
+const StateControlCheckBox = ({ initialValue, onChange }) => {
 
-    const [value, setValue] = useState(false);
+    const [value, setValue] = useState(initialValue);
 
     const handleBoxStateChange = (event) => {
         (onChange)(event);
         setValue(!value);
     };
 
-
-
     return (
-        <WithToolTip
-            message={'Persist Login'}
-            tooltipVanish={false}
-            tooltipPlacement="left"
-            {...fields}
-            color={color || colors.primary}
-        >
-            <Checkbox
-                checked={value}
-                onChange={handleBoxStateChange}
-            />
-        </WithToolTip>
+        <Checkbox
+            checked={value}
+            onChange={handleBoxStateChange}
+        />
     )
 }
 
