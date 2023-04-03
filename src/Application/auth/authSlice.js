@@ -1,4 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
+import Cookies from "js-cookie";
+import { deletePersistProperty } from "../../hooks/usePersist";
+import { AUTH_COOKIE } from "../../utils/contants";
 
 const authSlice = createSlice({
     name: 'auth',
@@ -13,8 +16,10 @@ const authSlice = createSlice({
         },
 
         logOut: (state) => {
+            Cookies.remove(AUTH_COOKIE);
+            deletePersistProperty();
             state.user = null;
-            state.roles = null;
+            state.roles = [];
             state.token = null;
         }
     },

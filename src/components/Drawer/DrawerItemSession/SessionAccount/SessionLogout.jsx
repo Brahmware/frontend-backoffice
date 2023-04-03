@@ -1,5 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import { logOut } from '../../../../Application/auth/authSlice'
 import { LogoutIcon } from '../../../../assets/icons'
 import { colors } from '../../../../brahmwareTheme/theme'
@@ -8,11 +9,13 @@ import ThemedButton from '../../../Buttons/ThemedButton'
 const SessionLogout = () => {
 
     const dispatch = useDispatch();
+    const navigate = useNavigate;
 
-    const  handleLogoutClick = () => {
-        dispatch(logOut())
+    const handleLogoutClick = () => {
+        dispatch(logOut());
+        navigate('/login')
     };
-    
+
     return (
         <ThemedButton
             loading={false}
@@ -36,7 +39,7 @@ const SessionLogout = () => {
                     },
                 },
             }}
-         onClick={handleLogoutClick}
+            onClick={handleLogoutClick}
         >
             Logout
         </ThemedButton>

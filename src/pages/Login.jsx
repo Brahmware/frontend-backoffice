@@ -8,7 +8,7 @@ import ColumnFlexCC from '../components/placements/ColumnFlexCC';
 import FlexCC from '../components/placements/FlexCC';
 import SEO from '../components/seo';
 import FormHeader from '../containers/FormHeader';
-import LoginFormFields from '../containers/LoginFormFields.jsx';
+import LoginFormFields from '../containers/LoginFormFields';
 import LoginNavigationButtons from '../containers/LoginNavigationButtons';
 import addAlpha from '../utils/addAlpha';
 
