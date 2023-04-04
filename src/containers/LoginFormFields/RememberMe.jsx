@@ -1,7 +1,7 @@
 import { FormControlLabel, Typography } from '@mui/material'
 import React from 'react'
 import { Controller } from 'react-hook-form'
-import { colors } from '../../brahmwareTheme/theme'
+import { colors, transition } from '../../brahmwareTheme/theme'
 import StateControlCheckBox from '../../components/CheckBox/StateControlCheckBox'
 import WithToolTip from '../../components/TooltipComponent/WithTooltip'
 import usePersist from '../../hooks/usePersist'
@@ -43,6 +43,7 @@ const RememberMe = ({ control }) => {
                                 <Typography
                                     lineHeight='1.125em'
                                     whiteSpace='nowrap'
+                                    className='noselect'
                                 >
                                     Remember Me
                                 </Typography>

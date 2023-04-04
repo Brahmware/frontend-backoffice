@@ -8,7 +8,7 @@ import WorldMarkSimpleLogo from '../assets/Logo/WorldMarkSimpleLogo'
 
 const LoginNavigationButtons = () => {
     return (
-        <FlexSC sx={{ gap: '2em' }}>
+        <FlexSC className='noselect' sx={{ gap: '2em' }}>
             <WithToolTip
                 message={'Go to Brahmware'}
                 color={colors.primary}

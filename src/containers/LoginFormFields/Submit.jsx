@@ -1,12 +1,11 @@
 import React from 'react'
-import { useLoginMutation } from '../../Application/auth/authApiSlice';
-import ThemedLoadingButton from '../../components/Buttons/ThemedLoadingButton'
-import { ArrowForwardRounded as ForwardIcon } from '@mui/icons-material';
+import { Login  as ForwardIcon } from '@mui/icons-material';
+import ArtisticLoadingButton from '../../components/Buttons/ArtisticLoadingButton';
 
 const Submit = ({ isLoading }) => {
 
     return (
-        <ThemedLoadingButton
+        <ArtisticLoadingButton
             variant={isLoading ? 'outlined' : 'contained'}
             size="medium"
             fullWidth={true}
@@ -18,8 +17,8 @@ const Submit = ({ isLoading }) => {
             type='submit'
             sx={{ width: '8em' }}
         >
-            Submit
-        </ThemedLoadingButton>
+            Login
+        </ArtisticLoadingButton>
     )
 }
 

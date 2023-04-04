@@ -6,7 +6,7 @@ import FlexSC from '../../components/placements/FlexSC'
 
 const FormTitle = () => {
     return (
-        <FlexSC gap={'0.5em'}>
+        <FlexSC gap={'0.5em'} className='noselect'>
             <BrahmNautIcon height={'2em'} width={'2em'} fill={colors.text__color} />
             <Typography variant='h4' fontWeight={'bold'}>Login</Typography>
         </FlexSC>
