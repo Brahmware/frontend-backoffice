@@ -1,5 +1,7 @@
 import { Avatar } from "@mui/material"
+import { useSelector } from "react-redux"
 import { Link } from "react-router-dom"
+import { selectCurrentDrawerState } from "../../../Application/drawerState/drawerStateSlice"
 import { colors, scales, transition } from "../../../brahmwareTheme/theme"
 import LoadingIconButton from "../../../components/Buttons/LoadingIconButton"
 
@@ -24,14 +26,17 @@ const SessionAvatar = () => {
                         transform: `scale(${scales.small})`,
                     },
                 },
+
+                transition: transition(),
+
             }}
         >
             <Avatar
                 className={"icon__avatar"}
                 alt="Cindy Baker"
                 sx={{
-                    width: 42,
-                    height: 42,
+                    width: 54,
+                    height: 54,
                 }}
                 src="https://images.unsplash.com/photo-1597223557154-721c1cecc4b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
             />

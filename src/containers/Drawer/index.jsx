@@ -1,8 +1,10 @@
-import { Box, Divider } from "@mui/material";
+import { Box } from "@mui/material";
 import ColumnFlexCC from "../../components/placements/ColumnFlexCC";
 import DrawerLayout from "../../layout/DrawerLayout";
 import DrawerItemSwitch from "./DrawerItemSwitch";
 import DrawerItemSession from "./DrawerItemSession";
+import CardColumnFlexCC from "../../components/cards/CardColumnFlexCC";
+import { colors } from "../../brahmwareTheme/theme";
 
 
 const Drawer = () => (
@@ -12,18 +14,19 @@ const Drawer = () => (
                 Hi
             </Box>
             <ColumnFlexCC className='bottom' sx={{ height: 'max-content' }}>
-                <Divider flexItem orientation='horizontal' />
-                <ColumnFlexCC
+                <CardColumnFlexCC
+                    elevation={1}
                     className='bottom'
                     sx={{
                         height: 'max-content',
                         py: '1.5em',
-                        gap: '1em'
+                        gap: '1em',
+                        backgroundColor: colors.darker__card
                     }}
                 >
                     <DrawerItemSwitch />
                     <DrawerItemSession />
-                </ColumnFlexCC>
+                </CardColumnFlexCC>
             </ColumnFlexCC>
         </ColumnFlexCC>
     </DrawerLayout>

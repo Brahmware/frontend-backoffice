@@ -1,17 +1,22 @@
-import { Divider } from '@mui/material';
+import { useSelector } from 'react-redux';
+import { selectCurrentDrawerState } from '../../../Application/drawerState/drawerStateSlice';
 import MenuItemBox from '../../../components/Boxes/MenuItemBox';
-import FlexSC from '../../../components/placements/FlexSC';
+import TransitionEnabledBox from '../../../components/Boxes/TransitionEnabledBox';
 import SessionAccount from './SessionAccount';
 import SessionAvatar from './SessionAvatar';
 
 const DrawerItemSession = () => {
+
+    const { drawerOpen } = useSelector(selectCurrentDrawerState);
+
     return (
-        <MenuItemBox>
-            <SessionAvatar />
-            <FlexSC gap='0.5em'>
-                <Divider orientation='vertical' flexItem />
+        <MenuItemBox gap='3em'>
+            <TransitionEnabledBox sx={{ transform: drawerOpen ? 'scale(1.5) translateX(1em)' : 'scale(1)' }}>
+                <SessionAvatar />
+            </TransitionEnabledBox>
+            <TransitionEnabledBox sx={{ transform: !drawerOpen ? 'translateX(-0.75em)' : 'translateX(0em)' }}>
                 <SessionAccount />
-            </FlexSC>
+            </TransitionEnabledBox>
         </MenuItemBox>
     )
 }
