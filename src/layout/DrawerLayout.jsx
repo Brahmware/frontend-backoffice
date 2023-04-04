@@ -10,6 +10,7 @@ const DrawerLayout = ({ children }) => {
 
     return (
         <Box
+            className='noselect'
             sx={{
                 backgroundColor: colors.darker__card,
                 gridColumn: drawerOpen ? '1/3' : '1/2',
