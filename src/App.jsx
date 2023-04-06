@@ -4,8 +4,10 @@ import { lazy } from "react";
 import "./assets/scss/app.scss";
 import PersistLogin from './features/auth/PersistLogin';
 import { allGroups } from './utils/permissionGroups';
+import Dashboard from './pages/Application/Home';
+import Tasks from './pages/Application/Tasks';
 
-const Home = lazy(() => import("./pages/Home"));
+const Application = lazy(() => import("./pages/Application"));
 const Login = lazy(() => import("./pages/Login"));
 
 const App = () => {
@@ -13,7 +15,11 @@ const App = () => {
 		<Routes>
 			<Route element={<PersistLogin />} >
 				<Route element={<RequireAuth allowedRoles={allGroups} />}>
-					<Route exact path='/' element={<Home />} />
+					<Route path='/*' element={<Application />} >
+						{}
+						<Route index element={<Dashboard />} />
+						<Route path='tasks' element={<Tasks />} />
+					</Route>
 				</Route>
 			</Route>
 			<Route path="/login" element={<Login />}></Route>

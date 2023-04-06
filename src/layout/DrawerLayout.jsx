@@ -13,12 +13,11 @@ const DrawerLayout = ({ children }) => {
             className='noselect'
             sx={{
                 backgroundColor: colors.darker__card,
-                gridColumn: drawerOpen ? '1/3' : '1/2',
                 width: drawerOpen ? drawer.fullDrawerWidth : drawer.drawerClose,
-                gridRow: '1/11',
                 transition: transition(),
                 overflow: 'hidden',
                 position: 'relative',
+                height: '100%',
 
                 '&:before': {
                     content: '""',
