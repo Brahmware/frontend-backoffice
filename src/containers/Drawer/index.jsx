@@ -13,21 +13,20 @@ const Drawer = () => (
             <Box className='top'>
                 Hi
             </Box>
-            <ColumnFlexCC className='bottom' sx={{ height: 'max-content' }}>
-                <CardColumnFlexCC
-                    elevation={1}
-                    className='bottom'
-                    sx={{
-                        height: 'max-content',
-                        py: '1.5em',
-                        gap: '1em',
-                        backgroundColor: colors.darker__card
-                    }}
-                >
-                    <DrawerItemSwitch />
-                    <DrawerItemSession />
-                </CardColumnFlexCC>
-            </ColumnFlexCC>
+            <CardColumnFlexCC
+                elevation={1}
+                className='bottom'
+                sx={{
+                    height: 'max-content',
+                    py: '1.75em',
+                    gap: '1em',
+                    backgroundColor: colors.darker__card,
+                    borderRadius: 'unset'
+                }}
+            >
+                <DrawerItemSwitch />
+                <DrawerItemSession />
+            </CardColumnFlexCC>
         </ColumnFlexCC>
     </DrawerLayout>
 );

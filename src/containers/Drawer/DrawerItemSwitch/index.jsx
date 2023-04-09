@@ -2,16 +2,17 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectCurrentDrawerState, setDrawerState } from "../../../Application/drawerState/drawerStateSlice";
 import { colors, drawer } from "../../../brahmwareTheme/theme";
 import FlexCC from "../../../components/placements/FlexCC";
-import FlexSC from "../../../components/placements/FlexSC";
 import SwitchToggle from "../../../components/switches/SwitchToggle";
 import WithToolTip from "../../../components/TooltipComponent/WithTooltip";
+import SettingsIcon from '@mui/icons-material/Settings';
+import { IconButton } from "@mui/material";
 
 const DrawerItemSwitch = () => {
     const currentDrawerState = useSelector(selectCurrentDrawerState);
     const dispatch = useDispatch();
 
     return (
-        <FlexSC>
+        <FlexCC px={'1em'} sx={{ justifyContent: 'space-between' }}>
             <FlexCC sx={{ width: drawer.drawerClose }}>
                 <WithToolTip
                     color={currentDrawerState.drawerOpen ? colors.primary : colors.muted}
@@ -30,7 +31,12 @@ const DrawerItemSwitch = () => {
                     />
                 </WithToolTip>
             </FlexCC>
-        </FlexSC>
+            <IconButton
+                color='primary'
+            >
+                <SettingsIcon />
+            </IconButton>
+        </FlexCC>
     )
 }
 

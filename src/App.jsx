@@ -16,9 +16,10 @@ const App = () => {
 			<Route element={<PersistLogin />} >
 				<Route element={<RequireAuth allowedRoles={allGroups} />}>
 					<Route path='/*' element={<Application />} >
-						{}
 						<Route index element={<Dashboard />} />
 						<Route path='tasks' element={<Tasks />} />
+						<Route path='account' element={<>Account</>} />
+						<Route path="*" element={<Navigate to="/" replace />} />
 					</Route>
 				</Route>
 			</Route>

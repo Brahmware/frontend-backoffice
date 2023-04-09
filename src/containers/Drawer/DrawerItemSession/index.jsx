@@ -11,7 +11,7 @@ const DrawerItemSession = () => {
 
     return (
         <MenuItemBox gap='3em'>
-            <TransitionEnabledBox sx={{ transform: drawerOpen ? 'scale(1.5) translateX(1em)' : 'scale(1)' }}>
+            <TransitionEnabledBox sx={{ transform: drawerOpen ? 'scale(1.25) translateX(1em)' : 'scale(1)' }}>
                 <SessionAvatar />
             </TransitionEnabledBox>
             <TransitionEnabledBox sx={{ transform: !drawerOpen ? 'translateX(-0.75em)' : 'translateX(0em)' }}>

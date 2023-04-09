@@ -35,8 +35,8 @@ const SessionAvatar = () => {
                 className={"icon__avatar"}
                 alt="Cindy Baker"
                 sx={{
-                    width: 54,
-                    height: 54,
+                    width: 56,
+                    height: 56,
                 }}
                 src="https://images.unsplash.com/photo-1597223557154-721c1cecc4b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
             />
