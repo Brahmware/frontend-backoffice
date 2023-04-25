@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { selectCurrentDrawerState } from '../Application/drawerState/drawerStateSlice';
-import { colors, drawer, transition } from '../brahmwareTheme/theme';
+import { backgroundDesigns, colors, drawer, shadows, transition } from '../brahmwareTheme/theme';
 import ColumnFlexCC from '../components/placements/ColumnFlexCC';
 
 const DrawerLayout = ({ children }) => {
@@ -12,7 +12,7 @@ const DrawerLayout = ({ children }) => {
         <Box
             className='noselect'
             sx={{
-                backgroundColor: colors.darker__card,
+                backgroundColor: backgroundDesigns.bark,
                 width: drawerOpen ? drawer.fullDrawerWidth : drawer.drawerClose,
                 transition: transition(),
                 overflow: 'hidden',
@@ -26,13 +26,19 @@ const DrawerLayout = ({ children }) => {
                     top: '-5%',
                     height: '110%',
                     width: '110%',
-                    boxShadow: `inset 0px 0px 3px 3px ${colors.black}`,
+                    boxShadow: shadows.defaultLayer_1,
                     transition: transition(),
                     opacity: drawerOpen ? 1 : 0,
                 }
             }}
         >
-            <ColumnFlexCC sx={{ justifyContent: 'space-between' }}>
+            <ColumnFlexCC
+                sx={{
+                    minWidth: drawer.fullDrawerWidth,
+                    alignItems: 'start',
+                    justifyContent: 'space-between',
+                }}
+            >
                 {children}
             </ColumnFlexCC>
         </Box >

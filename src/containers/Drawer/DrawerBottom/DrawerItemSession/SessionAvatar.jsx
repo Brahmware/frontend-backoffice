@@ -1,9 +1,7 @@
 import { Avatar } from "@mui/material"
-import { useSelector } from "react-redux"
 import { Link } from "react-router-dom"
-import { selectCurrentDrawerState } from "../../../Application/drawerState/drawerStateSlice"
-import { colors, scales, transition } from "../../../brahmwareTheme/theme"
-import LoadingIconButton from "../../../components/Buttons/LoadingIconButton"
+import { colors, scales, transition } from "../../../../brahmwareTheme/theme"
+import LoadingIconButton from "../../../../components/Buttons/LoadingIconButton"
 
 
 const SessionAvatar = () => {

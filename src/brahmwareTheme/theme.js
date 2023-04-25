@@ -1,41 +1,17 @@
 import { createTheme } from "@mui/material";
 import addAlpha from "../utils/addAlpha";
+import {colors as themeColors} from "./colors";
+import { backgrounds } from "./backgrounds";
 
-let colors_set = {
-    primary: "#D99938",
-    primary__dark: "#825c22",
-    primary__hover_bg: "#100D09",
-    secondary: "#59A5DE",
-    success: "#2e7d32",
-    info: "#0dcaf0",
-    danger: "#da2929",
-    danger__form_bg: "#120303",
-    warning: "#ef6621",
-    dark: "#121212",
-    light: "#f8f9fa",
-    muted: "#1b1b1b",
-    disabled: "#333333",
-    disabled__text: "#494949",
-    border: "#e1e1e180",
-    text__color: "#d5d5d5",
-    text__color__dark: "#969696",
-    inverse: "",
-    shaft: "",
-    body__bg: "#030302",
-    dark__card: '#1E1E1E',
-    darker__card: '#0c0c0c',
-    white: "#ffffff",
-    black: "#000000",
-    link__primary: "#F08A32",
-    input_border__color: "#616161",
-    transperent: 'rgba(0, 0, 0, 0)',
-};
+let colors_set = themeColors;
 
 export const colors = {
     ...colors_set,
     field__bg: '#3d3d3d',
     transparent__black: `${addAlpha(colors_set.black, 0.75)}`,
 }
+
+export const backgroundDesigns = backgrounds;
 
 export const scales = {
     small: 1.05,
@@ -53,6 +29,13 @@ export const speed = {
 const fonts = {
     poppins: "Poppins",
     montserrat: "Montserrat"
+};
+
+export const shadows = {
+    defaultLayer_1: `inset 0px 0px 3px 3px ${colors.black}`,
+    defaultLayer_2: `0px 0px 3px 3px ${colors.black}`,
+    defaultLayer_3: `inset 0px 0px 3px 3px ${colors.black}`,
+    defaultLayer_4: `inset 0px 0px 3px 3px ${colors.black}`,
 }
 
 export const transition = (speed) => `all ${speed === 'fast' ? '200ms' : '600ms'} ease 0s`

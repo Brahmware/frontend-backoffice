@@ -1,7 +1,7 @@
 import { Typography } from "@mui/material";
 import { useSelector } from "react-redux";
-import { selectCurrentUser } from "../../../../Application/auth/authSlice";
-import { colors } from "../../../../brahmwareTheme/theme";
+import { selectCurrentUser } from "../../../../../Application/auth/authSlice";
+import { colors } from "../../../../../brahmwareTheme/theme";
 
 const SessionUser = () => {
 

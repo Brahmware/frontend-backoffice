@@ -9,7 +9,7 @@ const Home = () => {
     return (
         <Fragment>
             <SEO title={pageMeta.getPageMetaTitle()} />
-            <FlexCC sx={{ backgroundColor: 'green' }}>
+            <FlexCC>
                 <Typography>Home</Typography>
             </FlexCC>
         </Fragment>

@@ -1,7 +1,7 @@
-import { LogoutIcon } from "../../../../assets/icons";
-import { colors } from "../../../../brahmwareTheme/theme";
-import ThemedButton from "../../../../components/Buttons/ThemedButton";
-import useLogout from "../../../../hooks/useLogout";
+import { LogoutIcon } from "../../../../../assets/icons";
+import { colors } from "../../../../../brahmwareTheme/theme";
+import ThemedButton from "../../../../../components/Buttons/ThemedButton";
+import useLogout from "../../../../../hooks/useLogout";
 
 
 const SessionLogout = () => {

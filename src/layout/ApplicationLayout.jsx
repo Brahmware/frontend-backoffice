@@ -2,7 +2,7 @@ import { Box, styled } from '@mui/material'
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { selectCurrentDrawerState } from '../Application/drawerState/drawerStateSlice'
-import { colors, drawer, transition } from '../brahmwareTheme/theme'
+import { backgroundDesigns, colors, drawer, shadows, transition } from '../brahmwareTheme/theme'
 import FlexSC from '../components/placements/FlexSC'
 import Drawer from '../containers/Drawer'
 import NotificationBar from '../containers/NotificationBar'
@@ -13,9 +13,10 @@ export const ApplicationDisplayLayout = styled(Box)({
     height: '100%',
     display: 'grid',
     gridTemplateColumns: 'repeat(5, 1fr)',
-    gridTemplateRows: '2em repeat(5, 1fr)',
+    gridTemplateRows: '3em repeat(5, 1fr)',
     justify: 'center',
-    align: 'center'
+    align: 'center',
+    backgroundColor: backgroundDesigns.infiniteL
 });
 
 const ApplicationLayout = ({ children }) => {
@@ -37,7 +38,19 @@ const ApplicationLayout = ({ children }) => {
                             transition: transition(),
                             overflow: 'hidden',
                             position: 'relative',
-                            height: '100%'
+                            height: '100%',
+
+                            '&:before': {
+                                content: '""',
+                                position: 'absolute',
+                                left: 0,
+                                top: '-5%',
+                                height: '110%',
+                                width: 'unset',
+                                boxShadow: shadows.defaultLayer_2,
+                                transition: transition(),
+                                opacity: !drawerOpen ? 1 : 0,
+                            }
                         }}
                     >
                         <ApplicationDisplayLayout>
