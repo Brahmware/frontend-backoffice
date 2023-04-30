@@ -32,9 +32,9 @@ const MenuItemBox = styled(FlexSC)({
     },
 
     '& #dark': {
-        fill: colors.muted,
+        fill: colors.text__color__dark,
         '& path': {
-            fill: colors.muted,
+            fill: colors.text__color__dark,
         }
     },
 
