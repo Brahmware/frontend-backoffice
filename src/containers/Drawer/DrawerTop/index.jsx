@@ -22,7 +22,7 @@ const DrawerTop = () => {
             sx={{ transition: transition() }}
         >
             <SeedOfLifeIcon height={'3.5em'} />
-            <MissionControlLogoFull height={'2em'} />
+            <MissionControlLogoFull height={'2.125em'} />
         </MenuItemBox>
     )
 };
