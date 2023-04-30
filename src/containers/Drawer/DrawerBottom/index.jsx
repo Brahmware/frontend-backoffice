@@ -19,6 +19,7 @@ const DrawerBottom = () => {
                 backgroundColor: drawerOpen ? colors.darker__card : colors.body__bg,
                 borderRadius: 'unset',
                 transition: transition(),
+                mt: 'auto'
             }}
         >
             <DrawerItemSwitch />

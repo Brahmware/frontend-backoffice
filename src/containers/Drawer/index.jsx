@@ -7,7 +7,7 @@ import MainMenue from "./MainMenue";
 
 const Drawer = () => (
     <DrawerLayout>
-        <ColumnFlexCC sx={{ justifyContent: 'space-between' }}>
+        <ColumnFlexCC sx={{ justifyContent: 'start' }}>
             <DrawerTop />
             <MainMenue />
             <DrawerBottom />
