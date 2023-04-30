@@ -50,6 +50,7 @@ const ApplicationLayout = ({ children }) => {
                                 boxShadow: shadows.defaultLayer_2,
                                 transition: transition(),
                                 opacity: !drawerOpen ? 1 : 0,
+                                pointerEvents: 'none',
                             }
                         }}
                     >

@@ -29,6 +29,7 @@ const DrawerLayout = ({ children }) => {
                     boxShadow: shadows.defaultLayer_1,
                     transition: transition(),
                     opacity: drawerOpen ? 1 : 0,
+                    pointerEvents: 'none',
                 }
             }}
         >
