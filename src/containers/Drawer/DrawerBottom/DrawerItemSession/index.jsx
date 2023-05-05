@@ -11,10 +11,10 @@ const DrawerItemSession = () => {
 
     return (
         <MenuItemBox gap='3em' pt='2em'>
-            <TransitionEnabledBox sx={{ transform: drawerOpen ? 'translate(0.5em, -1em) scale(1.25)' : 'scale(1)' }}>
+            <TransitionEnabledBox sx={{ transform: drawerOpen ? 'translate(0.5em, -1.25em) scale(1.1)' : 'scale(1)' }}>
                 <SessionAvatar />
             </TransitionEnabledBox>
-            <TransitionEnabledBox sx={{ transform: !drawerOpen ? 'translateX(-1em)' : 'translate(-2em, -1em)' }}>
+            <TransitionEnabledBox sx={() => drawerOpen ? ({ transform: 'translate(-1.75em, -1em)', opacity: 1 }) : ({ transform: 'translate(1em, 1em)', opacity: 0 })}>
                 <SessionAccount />
             </TransitionEnabledBox>
         </MenuItemBox>

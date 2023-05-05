@@ -46,7 +46,7 @@ const DrawerItemSwitch = () => {
                     <SettingsIcon />
                 </ElevatedFilledIconButton>
             </WithToolTip>
-        </FlexCC>
+        </FlexCC >
     )
 }
 

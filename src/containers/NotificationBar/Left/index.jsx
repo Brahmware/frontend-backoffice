@@ -6,10 +6,10 @@ const Left = () => {
     return (
         <NotificationLeftLayout>
             <BrahmCard sx={{ px: '2em', borderRadius: '2em' }}>
-                <Typography>Global Actions</Typography>
+                <Typography whiteSpace={'nowrap'}>Global Actions</Typography>
             </BrahmCard>
         </NotificationLeftLayout >
     )
-}
+};
 
-export default Left
+export default Left;

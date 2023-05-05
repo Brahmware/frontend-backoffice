@@ -4,6 +4,7 @@ import { selectCurrentDrawerState } from '../Application/drawerState/drawerState
 import { backgroundDesigns, colors, drawer, shadows, transition } from '../brahmwareTheme/theme';
 import ColumnFlexCC from '../components/placements/ColumnFlexCC';
 
+
 const DrawerLayout = ({ children }) => {
 
     const { drawerOpen } = useSelector(selectCurrentDrawerState);

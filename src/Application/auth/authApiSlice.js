@@ -1,29 +1,29 @@
-import { apiSlice } from "../api/apiSlice";
+import { apiSlice } from "../api/apislice";
 import responseProcessor from "../helper/responseProcessor";
 import { logOut, setCredentials } from "./authSlice";
 
 export const authApiSlice = apiSlice.injectEndpoints({
-    endpoints: builder => ({
+    endpoints: (builder) => ({
         login: builder.mutation({
-            query: credentials => ({
-                url: '/auth',
-                method: 'POST',
-                body: { ...credentials }
+            query: (credentials) => ({
+                url: "/auth",
+                method: "POST",
+                body: { ...credentials },
             }),
             async onQueryStarted(_args, { dispatch, queryFulfilled }) {
                 await responseProcessor({
-                    dispatch: dispatch,
-                    queryFulfilled: queryFulfilled,
-                    targetFunction: setCredentials
-                })
-            }
+                    dispatch,
+                    queryFulfilled,
+                    targetFunction: setCredentials,
+                });
+            },
         }),
         sendLogout: builder.mutation({
             query: () => ({
-                url: '/logout',
-                method: 'POST',
+                url: "/logout",
+                method: "POST",
             }),
-            async onQueryStarted(args, { dispatch, queryFulfilled }) {
+            async onQueryStarted(_args, { dispatch, queryFulfilled }) {
                 dispatch(logOut());
                 try {
                     const { data } = await queryFulfilled;
@@ -34,30 +34,28 @@ export const authApiSlice = apiSlice.injectEndpoints({
                 } catch (err) {
                     console.error(err);
                 }
-            }
+            },
         }),
-
         refresh: builder.mutation({
             query: () => ({
-                url: '/auth/refresh',
-                method: 'GET',
+                url: "/auth/refresh",
+                method: "GET",
             }),
-            async onQueryStarted(arg, { dispatch, queryFulfilled }) {
+            async onQueryStarted(_args, { dispatch, queryFulfilled }) {
                 try {
                     const { data } = await queryFulfilled;
                     const { username, roles, accessToken } = data;
                     dispatch(setCredentials({ username, roles, accessToken }));
                 } catch (err) {
-                    console.log(err)
+                    console.log(err);
                 }
-            }
+            },
         }),
-
-    })
+    }),
 });
 
 export const {
     useLoginMutation,
     useSendLogoutMutation,
-    useRefreshMutation
+    useRefreshMutation,
 } = authApiSlice;

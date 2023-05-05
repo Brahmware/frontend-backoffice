@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { apiSlice } from "./api/apiSlice";
+import { apiSlice } from "./api/apislice";
 import responseStateReducer from "./responseState/responseStateSlice";
 import drawerStateReducer from "./drawerState/drawerStateSlice";
 import authReducer from "./auth/authSlice";
@@ -16,7 +16,6 @@ export const store = configureStore({
         error: errorReducer,
         users: usersReducer,
         me: myReducer,
-
     },
     middleware: getDefaultMiddleware => getDefaultMiddleware().concat(apiSlice.middleware),
     devTools: true
