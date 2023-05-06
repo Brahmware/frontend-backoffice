@@ -3,6 +3,7 @@ import { useState, Fragment } from "react";
 import { TooltipComponent } from "./TooltipComponent";
 
 const WithToolTip = ({
+
     className,
     index,
     color,
@@ -14,7 +15,9 @@ const WithToolTip = ({
     tooltipMargin,
     tooltipVanish,
     tooltipTimeout,
+    childIsComponent,
     ...others
+    
 }) => {
 
     const [show, setShow] = useState(false);
@@ -25,6 +28,8 @@ const WithToolTip = ({
             setTimeout(() => setShow(false), tooltipTimeout || 2000);
         }
     }
+
+    const isReactComponent = typeof children.type === 'function';
 
     return (
         <Fragment key={index}>
@@ -46,7 +51,7 @@ const WithToolTip = ({
                         <Typography
                             {...others}
                             className={className}
-                            component='span'
+                            component={isReactComponent ? 'div' : 'span'}
                             onClick={() => !showChangeState && setShow(false)}
                         >
                             {children}

@@ -19,7 +19,6 @@ const StyledFullScreen = styled(FullScreen)({
 const FullScreenProvider = ({ children }) => {
 
     const handle = useFullScreenHandle();
-    console.log(`FullScreen: ${handle.active}`);
 
     return (
         <StyledFullScreen handle={handle} >

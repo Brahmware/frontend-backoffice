@@ -14,7 +14,7 @@ export const drawerInitialState = {
             path: '/users'
         },
         {
-            icon: 'http://localhost:7580/backend_controller/get_file/navigationDrawerIcons/prakas_h.jpg',
+            icon: 'http://localhost:7580/backend_controller/get_file/navigationDrawerIcons/prakas-h.jpg',
             title: 'Trade',
             path: '/trade'
         },

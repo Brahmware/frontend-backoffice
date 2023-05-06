@@ -10,8 +10,8 @@ const SessionLogout = () => {
 
     return (
         <ThemedButton
-            loading={false}
-            loadingPosition="end"
+            /* loading={false} */
+            /* loadingPosition="end" */
             color="inherit"
             endIcon={<LogoutIcon height={'0.5em'} width={'0.5em'} />}
             className={'logout__button'}

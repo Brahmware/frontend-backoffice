@@ -11,7 +11,7 @@ const DrawerItem = styled('div')({
         transition: transition('fast'),
     },
 
-    '& #light, & #dark': {
+    '& #light, & #dark, & #danger': {
         transition: transition('fast'),
         opacity: '1 !important',
         '& path': {
@@ -31,6 +31,13 @@ const DrawerItem = styled('div')({
         fill: colors.disabled__text,
         '& path': {
             fill: colors.disabled__text,
+        }
+    },
+
+    '& #danger': {
+        fill: colors.danger,
+        '& path': {
+            fill: colors.danger,
         }
     },
 

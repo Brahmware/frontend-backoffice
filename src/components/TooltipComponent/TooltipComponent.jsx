@@ -2,7 +2,14 @@ import styled from "@emotion/styled";
 import { Tooltip as MuiTooltip, Zoom, tooltipClasses } from "@mui/material";
 import { colors, speed } from "../../brahmwareTheme/theme";
 
-export const TooltipComponent = styled(({ className, ...props }) => (
+export const TooltipComponent = styled(({
+    className,
+    tooltipMargin: _tooltipMargin,
+    colorOn: _colorOn,
+    colorOff: _colorOff,
+    textColor: _textColor,
+    ...props
+}) => (
     <MuiTooltip
         {...props}
         TransitionComponent={Zoom}
@@ -19,3 +26,5 @@ export const TooltipComponent = styled(({ className, ...props }) => (
         margin: tooltipMargin && tooltipMargin
     },
 }));
+
+/* export const TooltipComponent = MuiTooltip; */
