@@ -24,10 +24,8 @@ const DrawerItemSwitch = () => {
                     />
                 </WithDrawerTooltip>
             </FlexCC>
-            <WithToolTip
-                message={'Open Settings'}
-                color={colors.darker__card}
-                textColor={colors.primary}
+            <WithDrawerTooltip
+                message={{ base: 'Open Settings' }}
                 tooltipPlacement='left'
             >
                 <ElevatedFilledIconButton
@@ -39,7 +37,8 @@ const DrawerItemSwitch = () => {
                 >
                     <SettingsIcon />
                 </ElevatedFilledIconButton>
-            </WithToolTip>
+
+            </WithDrawerTooltip>
         </FlexCC >
     )
 }

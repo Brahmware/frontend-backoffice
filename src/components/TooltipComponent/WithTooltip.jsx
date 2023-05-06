@@ -1,6 +1,8 @@
 import { Typography } from "@mui/material";
 import { useState, Fragment } from "react";
 import { TooltipComponent } from "./TooltipComponent";
+import { useSelector } from "react-redux";
+import { selectCurrentDrawerOpen } from "../../Application/drawerState/drawerStateSlice";
 
 const WithToolTip = ({
 
@@ -16,14 +18,16 @@ const WithToolTip = ({
     tooltipVanish,
     tooltipTimeout,
     childIsComponent,
+
     ...others
-    
+
 }) => {
 
+    const drawerOpen = useSelector(selectCurrentDrawerOpen);
     const [show, setShow] = useState(false);
 
     const onMouseEnterBehaviour = () => {
-        setShow(true);
+        !drawerOpen && setShow(true);
         if (tooltipVanish) {
             setTimeout(() => setShow(false), tooltipTimeout || 2000);
         }

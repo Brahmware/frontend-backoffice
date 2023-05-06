@@ -1,4 +1,4 @@
-import { Outlet, Link, Navigate } from 'react-router-dom';
+import { Outlet, Navigate } from 'react-router-dom';
 import { useEffect, useState, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import usePersist from '../../hooks/usePersist';
@@ -19,8 +19,7 @@ const PersistLogin = () => {
             isUninitialized,
             isLoading,
             isSuccess,
-            isError,
-            error
+            isError
         }
     ] = useRefreshMutation();
 
@@ -47,6 +46,7 @@ const PersistLogin = () => {
 
         return () => effectRan.current = true;
 
+    // eslint-disable-next-line
     }, []);
 
     let content

@@ -8,6 +8,7 @@ import addAlpha from "../../../utils/addAlpha";
 import { useNavigate } from "react-router-dom";
 import Icon from "../../../components/Icon";
 import DrawerItem from "../../../components/Drawer/DrawerItem";
+import WithDrawerTooltip from "../../../components/Drawer/WithDrawerTooltip";
 
 const MainMenueWrapper = styled(ColumnFlexSC)({
     alignSelf: 'start',
@@ -58,18 +59,20 @@ const MainMenue = () => {
                 menuItems.map((eachMenuItem, key) => {
                     return (
                         <DrawerItem key={key}>
-                            <MenuItemWrapper onClick={() => navigate(eachMenuItem.path)}>
-                                <ItemIconWrapper sx={() => drawerOpen ? ({ transform: 'scale(1)' }) : ({ transform: 'scale(0.85)' })}>
-                                    <Icon src={eachMenuItem.icon} />
-                                </ItemIconWrapper>
-                                <ItemContentWrapper
-                                    fontSize='1.25em'
-                                    fontWeight='bold'
-                                    sx={() => drawerOpen ? ({ transform: 'translate(0em, 0em) scale(1)', opacity: 1 }) : ({ transform: 'translate(1em, 1em) scale(0.85)', opacity: 0 })}
-                                >
-                                    {eachMenuItem.title}
-                                </ItemContentWrapper>
-                            </MenuItemWrapper>
+                            <WithDrawerTooltip message={{ base: eachMenuItem.title }}>
+                                <MenuItemWrapper onClick={() => navigate(eachMenuItem.path)}>
+                                    <ItemIconWrapper sx={() => drawerOpen ? ({ transform: 'scale(1)' }) : ({ transform: 'scale(0.85)' })}>
+                                        <Icon src={eachMenuItem.icon} />
+                                    </ItemIconWrapper>
+                                    <ItemContentWrapper
+                                        fontSize='1.25em'
+                                        fontWeight='bold'
+                                        sx={() => drawerOpen ? ({ transform: 'translate(0em, 0em) scale(1)', opacity: 1 }) : ({ transform: 'translate(1em, 1em) scale(0.85)', opacity: 0 })}
+                                    >
+                                        {eachMenuItem.title}
+                                    </ItemContentWrapper>
+                                </MenuItemWrapper>
+                            </WithDrawerTooltip>
                         </DrawerItem>
                     )
                 })
